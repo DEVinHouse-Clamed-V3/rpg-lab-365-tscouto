@@ -1,0 +1,28 @@
+# Pasta node_modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Configurações do editor
+.vscode/
+.idea/
+
+# Arquivos de saída do TypeScript
+dist/
+build/
+
+# Arquivos temporários
+*.tmp
+*.swp
+
+# Cache
+.cache/
