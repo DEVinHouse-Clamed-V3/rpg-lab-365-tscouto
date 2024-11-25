@@ -1,10 +1,11 @@
 import Arma from './Armas';
+import inimigo from './Inimigo';
 
 export default class Personagem {
   private nome: string = '';
-  private vida: number = 100;
-  private forca: number = 10;
-  private arma: Arma | null = null;
+  protected vida: number = 100;
+  protected forca: number = 10;
+  protected arma: Arma | null = null;
 
   getNome() {
     return this.nome;
@@ -57,11 +58,20 @@ export default class Personagem {
     }
   }
 
-  private causarDano() {
+  protected causarDano() {
     if (this.arma === null) {
       return this.forca;
     } else {
       return this.forca + this.arma?.getDano();
+    }
+  }
+
+  atacar(inimigo: inimigo) {
+    const chanceAcerto = Math.random();
+    if (chanceAcerto < 0.1) {
+      console.log('Ataque falhou');
+    } else {
+      inimigo.receberDano(this.causarDano());
     }
   }
 }
